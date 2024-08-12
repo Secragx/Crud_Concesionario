@@ -1,17 +1,23 @@
 package Modelo;
+
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public class ConsultaReferencia extends conexion {
+/**
+ * Clase ConsultasDestino para realizar operaciones CRUD en la tabla producto.
+ */
+    public class ConsultaReferencia extends conexion {
+    
         //////////////METODO RESGISTRAR/////
     public boolean registrar(concesionario p){
         PreparedStatement ps =null;
         Connection con = getConexion();
         String sql ="insert into producto (codigo,nombre,precio)values(?,?,?)";
+        
     try{
-            ps =con.prepareStatement(sql);
+            ps = con.prepareStatement(sql);
             ps.setInt(1,p.getMatricula());
             ps.setString(2,p.getReferencia());
             ps.setInt(3,p.getPrecio());
@@ -20,16 +26,15 @@ public class ConsultaReferencia extends conexion {
     }catch(SQLException e){  
         System.err.print(e);
             return false;
-    }        
+        }        
     }
- //////////////METODO MODIFICAR /////
-
-public boolean modificar (concesionario p){
-
     
-        PreparedStatement ps =null;
+ //////////////METODO MODIFICAR /////
+    public boolean modificar (concesionario p){
+           PreparedStatement ps =null;
         Connection con = getConexion();
         String sql ="update producto set codigo=?,nombre=?,precio=? where id=?";
+        
     try{
             ps =con.prepareStatement(sql);
             ps.setInt(1,p.getMatricula());
@@ -41,15 +46,15 @@ public boolean modificar (concesionario p){
     }catch(SQLException e){  
        System.err.println(e);
             return false;
-    }        
-}
+        }        
+    }
 
 ///////METODOO ELIMINAR/////
-
-public boolean eliminar (concesionario p){    
+    public boolean eliminar (concesionario p){    
         PreparedStatement ps =null;
         Connection con = getConexion();
         String sql ="delete from producto where id=?";
+        
     try{
             ps =con.prepareStatement(sql);
             ps.setInt(1,p.getId());                       
@@ -58,20 +63,21 @@ public boolean eliminar (concesionario p){
     }catch(SQLException e){  
        System.err.println(e);
             return false;
-    }        
-}
+        }        
+    }
 
-///////FIN ELIMINAR/////
 //////// METODO BUSCAR/////////////
-public boolean buscar (concesionario p){    
+    public boolean buscar (concesionario p){    
         PreparedStatement ps =null;
         Connection con = getConexion();
         ResultSet rs = null;
         String sql = "select *from producto where id=?";
+        
     try{
             ps =con.prepareStatement(sql);
             ps.setInt(1,p.getId());
             rs = ps.executeQuery();
+            
             if(rs.next())
           {
             p.setId(Integer.parseInt(rs.getString("id")));
@@ -85,8 +91,8 @@ public boolean buscar (concesionario p){
        System.err.print(e); 
         return false;
           
-    }              
-}
+        }              
+    }
 }
 //////// FIN BUSCAR/////////////
 
