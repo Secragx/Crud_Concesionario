@@ -2,10 +2,10 @@
 package Vista;
 
 
-public class Principal extends javax.swing.JFrame {
+public class DiseñoPrincipal extends javax.swing.JFrame {
 
  
-    public Principal() {
+    public DiseñoPrincipal() {
         initComponents();
     }
 
@@ -14,36 +14,36 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        btn_archivo = new javax.swing.JMenu();
+        btn_salir = new javax.swing.JMenuItem();
+        btn_menu = new javax.swing.JMenu();
+        btn_referencias = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Archivo");
+        btn_archivo.setText("Archivo");
 
-        jMenuItem2.setText("Salir");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                btn_salirActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        btn_archivo.add(btn_salir);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(btn_archivo);
 
-        jMenu2.setText("Menú");
+        btn_menu.setText("Menú");
 
-        jMenuItem1.setText("Referencias");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btn_referencias.setText("Referencias");
+        btn_referencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btn_referenciasActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        btn_menu.add(btn_referencias);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(btn_menu);
 
         setJMenuBar(jMenuBar1);
 
@@ -61,29 +61,29 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void btn_referenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_referenciasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_btn_referenciasActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_btn_salirActionPerformed
 
  
     public static void main(String args[]) {
     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new DiseñoPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenu jMenu1;
-    public javax.swing.JMenu jMenu2;
+    public javax.swing.JMenu btn_archivo;
+    public javax.swing.JMenu btn_menu;
+    public javax.swing.JMenuItem btn_referencias;
+    public javax.swing.JMenuItem btn_salir;
     private javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JMenuItem jMenuItem1;
-    public javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,13 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controlador;
 
-/**
- *
- * @author User
- */
-public class ControladorPrincipal {
+import Vista.DiseñoPrincipal;
+import Vista.DiseñoReferencia;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class ControladorPrincipal implements ActionListener {
+    private DiseñoPrincipal FrmPri;
+    private DiseñoReferencia FrmRef;
     
+    public ControladorPrincipal(DiseñoPrincipal frmPri, DiseñoReferencia frmRef){
+    this.FrmPri = frmPri;
+    this.FrmRef = frmRef;
+    this.FrmPri.
+    }
 }
