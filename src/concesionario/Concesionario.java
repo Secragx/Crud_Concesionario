@@ -1,20 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package concesionario;
 
-/**
- *
- * @author User
- */
+import Modelo.ConsultaReferencia;
+import Modelo.concesionario;
+import Vista.DiseñoReferencia;
+import Controlador.ControladorReferencia;
+
 public class Concesionario {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void Concesionario(String[] args) {
+       // Crea la instancia de la vista (DiseñoReferencia)
+        DiseñoReferencia vista = new DiseñoReferencia();
+
+        // Crea la instancia del modelo (concesionario y ConsultaReferencia)
+        concesionario modelo = new concesionario();
+        ConsultaReferencia consulta = new ConsultaReferencia();
+
+        // Crea la instancia del controlador
+        ControladorReferencia controlador = new ControladorReferencia(modelo, vista, consulta);
+
+        // Muestra la ventana principal
+        vista.setVisible(true);
     }
     
 }
