@@ -9,17 +9,18 @@ import Vista.DiseñoPrincipal;
 import Vista.DiseñoReferencia;
 import Modelo.conexion;
 
-public class Concesionario {
+public class MainConcesionario {
 
-    public static void Concesionario(String[] args) {
-        concesionario con =new concesionario();
+
+    public static void main(String[] args) {
+        concesionario con = new concesionario();//GPT
         ConsultaReferencia proC = new ConsultaReferencia();
         DiseñoReferencia frmRefe = new DiseñoReferencia();
-        ControladorReferencia ctrlPro = new   ControladorReferencia(con,frmRefe,proC);
+        ControladorReferencia ctrlRefe = new   ControladorReferencia(con,frmRefe,proC);
         DiseñoPrincipal frmPri =new  DiseñoPrincipal();
         ControladorPrincipal ctrlPri = new ControladorPrincipal (frmPri,frmRefe);
         ctrlPri.inicar();
-        frmPri.setVisible(true);     
+        frmPri.setVisible(true); 
     }
     
 }
