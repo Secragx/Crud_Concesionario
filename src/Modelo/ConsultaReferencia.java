@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 
 /**
- * Clase ConsultasDestino para realizar operaciones CRUD en la tabla producto.
+ * Clase ConsultasDestino para realizar operaciones CRUD en la tabla referencia.
  */
     public class ConsultaReferencia extends conexion {
     
@@ -14,7 +14,7 @@ import java.sql.ResultSet;
     public boolean registrar(concesionario p){
         PreparedStatement ps =null;
         Connection con = getConexion();
-        String sql ="insert into producto (codigo,nombre,precio)values(?,?,?)";
+        String sql ="insert into referencia (matricula,referencia,precio)values(?,?,?)";
         
     try{
             ps = con.prepareStatement(sql);
@@ -33,7 +33,7 @@ import java.sql.ResultSet;
     public boolean modificar (concesionario p){
            PreparedStatement ps =null;
         Connection con = getConexion();
-        String sql ="update producto set codigo=?,nombre=?,precio=? where id=?";
+        String sql ="update referencia set matricula=?,referencia=?,precio=? where id=?";
         
     try{
             ps =con.prepareStatement(sql);
@@ -53,7 +53,7 @@ import java.sql.ResultSet;
     public boolean eliminar (concesionario p){    
         PreparedStatement ps =null;
         Connection con = getConexion();
-        String sql ="delete from producto where id=?";
+        String sql ="delete from referencia where id=?";
         
     try{
             ps =con.prepareStatement(sql);
@@ -71,7 +71,7 @@ import java.sql.ResultSet;
         PreparedStatement ps =null;
         Connection con = getConexion();
         ResultSet rs = null;
-        String sql = "select *from producto where id=?";
+        String sql = "select *from referencia where id=?";
         
     try{
             ps =con.prepareStatement(sql);
@@ -81,8 +81,8 @@ import java.sql.ResultSet;
             if(rs.next())
           {
             p.setId(Integer.parseInt(rs.getString("id")));
-            p.setMatricula(rs.getInt("codigo"));
-            p.setReferencia(rs.getString("nombre"));
+            p.setMatricula(rs.getInt("matricula"));
+            p.setReferencia(rs.getString("referencia"));
             p.setPrecio(Integer.parseInt(rs.getString("precio")));          
             return true;
           }

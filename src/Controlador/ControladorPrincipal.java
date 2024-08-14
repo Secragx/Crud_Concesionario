@@ -18,7 +18,7 @@ public class ControladorPrincipal implements ActionListener {
         this.FrmPri.btn_salir.addActionListener(this);
     }
  public void inicar(){
-    FrmRef.setTitle("Producto");
+    FrmRef.setTitle("Referencia");
     FrmPri.setTitle("Principal");
     FrmPri.setLocationRelativeTo(null);
     FrmRef.setLocationRelativeTo(null);

@@ -61,7 +61,7 @@ public class ControladorReferencia implements ActionListener {
         if(e.getSource()==FrmRefe.btn_eliminar){
             con.setId(Integer.parseInt(FrmRefe.txt_id.getText()));
             if(proC.eliminar(con)){
-                JOptionPane.showMessageDialog(null,"Producto eliminado");
+                JOptionPane.showMessageDialog(null,"Referencia eliminado");
                 limpiar();
             }else{
                 JOptionPane.showMessageDialog(null,"Error al eliminar");
